@@ -4,10 +4,11 @@ function MovieList(props) {
     return (
         <tr>
             <td>{props.id}</td>
-            <td>{props.title}</td>
-            <td>{props.rating}</td>
-            <td>{props.awards}</td>
-            <td>{props.length}</td>
+            <td>{props.name}</td>
+            <td>{props.description}</td>
+            <td>{props.price}</td>
+            <td>{props.sale}</td>
+            <td>{props.category}</td>
         </tr>
     )
 }

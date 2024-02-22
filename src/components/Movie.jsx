@@ -2,22 +2,8 @@ import React from 'react'
 
 import MovieList from './MovieList';
 
-const movies = [
-    {
-        id: 1,
-        title: 'Spiderman: No Way Home',
-        rating: 2,
-        awards: 3,
-        length: 4,
-    },
-    {
-        id: 2,
-        title: 'Ironman 2',
-        rating: 4,
-        awards: 5,
-        length: 6,
-    }
-];
+
+//TENEMOS QUE CAMBIAR EL NOMBRE DEL COMPONENTE ACA Y EN TODO LUGAR DONDE SE IMPORTE
 
 class Movie extends React.Component {
 
@@ -37,8 +23,8 @@ class Movie extends React.Component {
     render() {
         return (
             <>
-                {/*<!-- MOVIES LIST -->*/}
-                <h1 className="h3 mb-2 text-gray-800 ">All the movies in the Database</h1>
+                {/*<!-- PRODUCTS LIST -->*/}
+                <h1 className="h3 mb-2 text-gray-800" >Todos los productos en la base de datos</h1>
 
                 {/*<!-- DataTales Example -->*/}
                 <div className="card shadow mb-4">
@@ -48,10 +34,11 @@ class Movie extends React.Component {
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Titulo</th>
-                                        <th>Calificación</th>
-                                        <th>Premios</th>
-                                        <th>Duración</th>
+                                        <th>Nombre</th>
+                                        <th>Descrpcion</th>
+                                        <th>Precio</th>
+                                        <th>Oferta</th>
+                                        <th>Categoria</th>
                                     </tr>
                                 </thead>
                                 <tbody>
