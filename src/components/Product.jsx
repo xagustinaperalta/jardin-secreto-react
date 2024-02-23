@@ -1,21 +1,21 @@
 import React from 'react'
 
-import MovieList from './MovieList';
+import ProductList from './ProductList'
 
 
 //TENEMOS QUE CAMBIAR EL NOMBRE DEL COMPONENTE ACA Y EN TODO LUGAR DONDE SE IMPORTE
 
-class Movie extends React.Component {
+class Product extends React.Component {
 
     state = {
-        moviesList:[]
+        productsList:[]
     }
     
     componentDidMount() {
-        fetch('http://127.0.0.1:3001/api/movies')
+        fetch('http://localhost:3000/api/products')
             .then(res => res.json())
             .then(response => {
-                this.setState({ moviesList: response.data })
+                this.setState({ productsList: response.data })
             })
             .catch(err => console.log(err))
     }
@@ -42,10 +42,10 @@ class Movie extends React.Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {this.state.moviesList.map((movie, index) =>
+                                    {this.state.productsList.map((product, index) =>
                                         // uso express operator aca porque como el nombre de las campo en el array es el mismo 
                                         // que el de la propiedad que tengo en 
-                                        <MovieList  {...movie} key={index} />
+                                        <ProductList  {...product} key={index} />
                                     )}
                                 </tbody>
                             </table>
@@ -57,4 +57,4 @@ class Movie extends React.Component {
     }
 
 }
-export default Movie
+export default Product

@@ -1,6 +1,6 @@
 import ContentRowTop from "./ContentRowTop"
 import Footer from "./Footer"
-import Movie from "./Movie"
+import Product from "./Product"
 import TopBar from "./TopBar"
 
 function ContentWrapper() {
@@ -10,7 +10,7 @@ function ContentWrapper() {
 			{/* <!-- Content Row Top --> */}
 			< ContentRowTop />
 			{/* <!--End Content Row Top--> */}
-			< Movie />
+			< Product />
 		</>
 	)
 }

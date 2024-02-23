@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function MovieList(props) {
+function ProductList(props) {
     return (
         <tr>
             <td>{props.id}</td>
@@ -13,12 +13,13 @@ function MovieList(props) {
     )
 }
 
-MovieList.PropTypes = {
+ProductList.PropTypes = {
     id: PropTypes.number,
-    title: PropTypes.string,
-    rating: PropTypes.number,
-    awards: PropTypes.number,
-    length: PropTypes.number
+    name: PropTypes.string,
+    description: PropTypes.string,
+    price: PropTypes.number,
+    sale: PropTypes.string,
+    category: PropTypes.string
 }
 
-export default MovieList
+export default ProductList

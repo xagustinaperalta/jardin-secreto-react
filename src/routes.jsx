@@ -4,7 +4,7 @@ import App from './App'
 import LastMovieInDb from './components/LastMovieInDb'
 import ContentWrapper from './components/ContentWrapper'
 import GenresInDb from './components/GenresInDb'
-import Movie from './components/Movie'
+import Product from './components/Product'
 import Error from './components/Error'
 import SearchMovies from './components/SearchMovies'
 
@@ -27,8 +27,8 @@ const routes = createBrowserRouter([
         element: <GenresInDb />,
       },
       {
-        path: '/movies',
-        element: <Movie />,
+        path: '/products',
+        element: <Product />,
       },
       {
         path: '/search',
