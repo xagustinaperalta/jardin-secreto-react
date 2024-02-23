@@ -37,9 +37,9 @@ function SideBar() {
 
 			{/* <!-- Nav Item - Charts --> */}
 			<li className="nav-item">
-				<Link className="nav-link" to="/genres">
+				<Link className="nav-link" to="/users">
 					<i className="fas fa-fw fa-chart-area"></i>
-					<span>Categorias</span></Link>
+					<span>Usuarios</span></Link>
 			</li>
 
 			{/* <!-- Nav Item - Tables --> */}

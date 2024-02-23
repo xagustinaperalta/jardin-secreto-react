@@ -1,19 +1,19 @@
 import React from 'react'
 
-import Genre from './Genre'
+import User from './User'
 
-class GenresInDb extends React.Component {
+class UsersInDB extends React.Component {
     //reemplaza el constructor si no voy a hacer nada más que darle el estado
     state = {
-        genresList: [],
+        usersList: [],
         isSecondaryBg: false
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:3001/api/genres')
+        fetch('http://localhost:3000/api/users')
             .then(res => res.json())
             .then(response => {
-                this.setState({ genresList: response.data })
+                this.setState({ userList: response.data })
             })
             .catch(err => console.log(err))
     }
@@ -31,8 +31,17 @@ class GenresInDb extends React.Component {
                     </div>
                     <div className={`card-body ${this.state.isSecondaryBg && 'bg-secondary'}`}>
                         <div className="row">
-                            {this.state.genresList.map((genre, index) =>
-                                <Genre key={index} name={genre.name} />
+                            <thead>
+                                <tr>
+
+                                    <th>Nombre</th>
+
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+
+                            {this.state.usersList.map((user, index) =>
+                                <User {...user} key={index}  />
                             )}
                         </div>
                     </div>
@@ -42,4 +51,4 @@ class GenresInDb extends React.Component {
     }
 }
 
-export default GenresInDb
+export default UsersInDB
