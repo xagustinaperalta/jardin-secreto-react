@@ -8,6 +8,7 @@ import Product from './components/Product'
 import Error from './components/Error'
 import SearchMovies from './components/SearchMovies'
 
+
 const routes = createBrowserRouter([
   {
     path: '/',

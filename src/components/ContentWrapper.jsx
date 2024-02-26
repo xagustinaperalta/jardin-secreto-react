@@ -2,6 +2,7 @@ import ContentRowTop from "./ContentRowTop"
 import Footer from "./Footer"
 import Product from "./Product"
 import TopBar from "./TopBar"
+import UsersInDB from "./UsersInDB"
 
 function ContentWrapper() {
 	return (
@@ -10,6 +11,7 @@ function ContentWrapper() {
 			{/* <!-- Content Row Top --> */}
 			< ContentRowTop />
 			{/* <!--End Content Row Top--> */}
+			< UsersInDB/>
 			< Product />
 		</>
 	)
