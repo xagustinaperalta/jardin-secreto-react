@@ -22,4 +22,4 @@ ProductList.PropTypes = {
     category: PropTypes.string
 }
 
-export default ProductList
+export default ProductList;

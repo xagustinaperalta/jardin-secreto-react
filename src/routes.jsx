@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 import App from './App'
-import LastMovieInDb from './components/LastMovieInDb'
+import LastProductInDb from './components/LastProductInDb'
 import ContentWrapper from './components/ContentWrapper'
 import UsersInDB from './components/UsersInDB'
 import Product from './components/Product'
@@ -21,7 +21,7 @@ const routes = createBrowserRouter([
       },
       {
         path: '/last-movie',
-        element: <LastMovieInDb />,
+        element: <LastProductInDb />,
       },
       {
         path: '/users',

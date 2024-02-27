@@ -2,26 +2,26 @@ import SmallCard from "./SmallCard"
 
 const data = [
     {
-        title: 'Movies in Data Base',
-        quantity: 21,
+        title: 'Producto totales',
+        quantity: 21, // ver(tiene que venir por base de datos)
         color: 'primary',
         icon: 'fa-film'
     },
     {
-        title: 'Total awards',
+        title: 'Categorias totales',
         quantity: 79,
         color: 'success',
         icon: 'fa-award'
     },
     {
-        title: 'Actors quantity',
+        title: 'Usuarios totales',
         quantity: 49,
         color: 'warning',
         icon: 'fa-user'
     }
 ]
 
-function ContentRowMovies() {
+function ContentRowProducts() {
     return (
         <div className="row">
 
@@ -41,4 +41,4 @@ function ContentRowMovies() {
         </div>
     )
 }
-export default ContentRowMovies
+export default ContentRowProducts;
