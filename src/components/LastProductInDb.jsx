@@ -1,36 +1,45 @@
-import PropTypes from 'prop-types';
-function LastProductInDb(props) {
+import React, { useState, useEffect } from 'react';
+
+
+function LastProductInDb() {
+    const [lastProduct, setLastProduct] = useState(null);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/api/products/last-product')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                setLastProduct(data);
+            })
+            .catch(error => console.error('Error al obtener el último producto:', error));
+    }, []);
+
     return (
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h5 className="m-0 font-weight-bold text-gray-800">Ultimo producto</h5>
+                    <h5 className="m-0 font-weight-bold text-gray-800">{lastProduct && lastProduct.name}</h5> Último producto agregado 
                 </div>
                 <div className="card-body">
-                    <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ "width": "40rem" }} src="/images/mandalorian.jpg" alt=" Star Wars - Mandalorian " /> 
-                    </div>
-                    <div>
-                        <h1>{props.name}</h1>
-                        <p>{props.description}</p>
-                        <h2>{props.price}</h2>
-                    </div>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Detalle del producto</a>
+                    {lastProduct ? (
+                        <>
+                            <div className="text-center">
+                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: '100%', height: '248px', objectFit: 'cover', objectPosition: 'center' }} src={lastProduct.img} alt={lastProduct.name} />
+                            </div>
+                            <p>{lastProduct.description}</p>
+                            <a className="btn btn-danger" href={`http://localhost:3000/products/productDetail/${lastProduct.id}`}>Ver detalle</a> 
+                        </>
+                    ) : (
+                        <p>Loading...</p>
+                    )}
                 </div>
             </div>
         </div>
-    )
-
-
-}
-LastProductInDb.PropTypes = {
-
-    name: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.number,
-
-
-
+    );
 }
 
 export default LastProductInDb;
