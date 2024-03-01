@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-
 function LastProductInDb() {
     const [lastProduct, setLastProduct] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetch('http://localhost:3000/api/products/last-product')
@@ -13,10 +13,17 @@ function LastProductInDb() {
                 return response.json();
             })
             .then(data => {
-                setLastProduct(data);
+                setLastProduct(data.data);  // Accede al objeto 'data' dentro de la respuesta
             })
-            .catch(error => console.error('Error al obtener el último producto:', error));
+            .catch(error => {
+                console.error('Error al obtener el último producto:', error);
+                setError(error);
+            });
     }, []);
+
+    if (error) {
+        return <p>Error: {error.message}</p>;
+    }
 
     return (
         <div className="col-lg-6 mb-4">
@@ -28,10 +35,10 @@ function LastProductInDb() {
                     {lastProduct ? (
                         <>
                             <div className="text-center">
-                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: '100%', height: '248px', objectFit: 'cover', objectPosition: 'center' }} src={lastProduct.img} alt={lastProduct.name} />
+                                <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: '100%', height: '248px', objectFit: 'cover', objectPosition: 'center' }} src={lastProduct.image} alt={lastProduct.name} />
                             </div>
                             <p>{lastProduct.description}</p>
-                            <a className="btn btn-danger" href={`http://localhost:3000/products/productDetail/${lastProduct.id}`}>Ver detalle</a> 
+                            <a className="btn btn-danger" href={`http://localhost:3000/products/last-product/${lastProduct.id}`}>Ver detalle</a> 
                         </>
                     ) : (
                         <p>Loading...</p>
