@@ -13,7 +13,8 @@ function User(props) {
 
 User.propTypes = {
     name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired
+    email: PropTypes.string.isRequired,
+    gender:PropTypes.string.isRequired
 
 }
 
