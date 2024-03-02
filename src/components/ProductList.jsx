@@ -13,7 +13,7 @@ function ProductList(props) {
     )
 }
 
-ProductList.PropTypes = {
+ProductList.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
     description: PropTypes.string,

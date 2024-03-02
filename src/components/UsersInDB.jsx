@@ -13,10 +13,18 @@ class UsersInDB extends React.Component {
         fetch('http://localhost:3000/api/users')
             .then(res => res.json())
             .then(response => {
-                this.setState({ usersList: response.data })
+                console.log(response); // Muestra la respuesta completa en la consola
+                if (Array.isArray(response.users)) {
+                    this.setState({ usersList: response.users });
+                } else {
+                    console.error("Los datos de usuario no tienen la estructura esperada:", response);
+                }
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
     }
+    
+    
+    
 
 
 
@@ -41,7 +49,7 @@ class UsersInDB extends React.Component {
 
 
                                 <tbody>
-                                    {this.state.usersList.map((user, index) =>
+                                    {this.state.usersList?.map((user, index) =>
 
                                         <User {...user} key={index} />
                                     )}
