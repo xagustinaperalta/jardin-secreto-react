@@ -49,12 +49,12 @@ function SideBar() {
 					<span>Productos</span></Link>
 			</li>
 			
-			<li className="nav-item">
+			{/* <li className="nav-item">
 				<Link className="nav-link collapsed" to="/search">
 					<i className="fas fa-search"></i>
 					<span>Buscar</span>
 				</Link>
-			</li>
+			</li> */}
 
 
 			{/* <!-- Divider --> */}
