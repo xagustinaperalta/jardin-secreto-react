@@ -11,8 +11,9 @@ function ContentRowProducts() {
         // Fetch para el total de productos
         fetch('http://localhost:3000/api/products')
             .then(response => response.json())
-            .then(data => {
-                if (data.hasOwnProperty('count')) {
+            .then(data => { 
+                setTotalCategories(data.countByCategory?.length || 0 );
+                if (data.count) {
                     setTotalProducts(data.count);
                 } else {
                     console.error('La respuesta no contiene el recuento de productos');

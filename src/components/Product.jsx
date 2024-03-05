@@ -37,8 +37,10 @@ class Product extends React.Component {
                                         <th>Nombre</th>
                                         <th>Descrpcion</th>
                                         <th>Precio</th>
+                                        <th>imagen</th>
                                         <th>Oferta</th>
                                         <th>Categoria</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>

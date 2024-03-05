@@ -35,8 +35,9 @@ function LastProductInDb() {
                     {lastProduct ? (
                         <>
                             <div className="text-center">
-                                <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: '100%', height: '248px', objectFit: 'cover', objectPosition: 'center' }} src={lastProduct.image} alt={lastProduct.name} />
+                                <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: '100%', height: '248px', objectFit: 'cover', objectPosition: 'center' }} src={`http://localhost:3000/images/products/${lastProduct.image}`}  alt={lastProduct.name} />
                             </div>
+            
                             <p>{lastProduct.description}</p>
                             <a className="btn btn-danger" href={`http://localhost:3000/products/last-product/${lastProduct.id}`}>Ver detalle</a> 
                         </>
@@ -48,5 +49,7 @@ function LastProductInDb() {
         </div>
     );
 }
+
+
 
 export default LastProductInDb;
